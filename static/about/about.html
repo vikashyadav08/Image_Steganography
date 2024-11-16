@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/tiny-slider.css" />
+    <link rel="stylesheet" href="style.css" />
+    <title>steganography</title>
+  </head>
+  <body>
+    <section class="home">
+      <div class="description">
+        <h1 class="title">
+          <span class="gradient-text">Python</span> steganography
+        </h1>
+        <p class="paragraph">
+          Steganography is the art and science of hiding messages or other secret information in a bunch of carrier information. steganography.js is a JavaScript library which provides this functionality for hiding information in images.
+        </p>
+        <form id="form" autocomplete="off">
+          <input
+            type="email"
+            id="email-id"
+            name="email_address"
+            aria-label="email adress"
+            placeholder=""
+            required
+            oninput="checkEmpty()" />
+          <button type="submit" class="btn" aria-label="submit">
+            <span>Subscribe</span>
+            <ion-icon name="arrow-forward-outline"></ion-icon>
+          </button>
+        </form>
+      </div>
+
+      <div class="users-color-container">
+        <span class="item" style="--i: 1"></span>
+        <img
+          class="item"
+          src="images/1.jpg"
+          style="--i: 2"
+          alt="" />
+        <span class="item" style="--i: 3"></span>
+        <img
+          class="item"
+          src="https://github.com/Gauravias/bot/blob/main/python.png?raw=true"
+          style="--i: 4"
+          alt="" />
+
+        <img
+          class="item"
+          src="images/Sarita Singh.jpg"
+          style="--i: 10"
+          alt="" />
+        <span class="item" style="--i: 11"></span>
+        <img class="item" src="images/Prakriti Gupta.jpg" style="--i: 12" alt="" />
+        <span class="item" style="--i: 5"></span>
+
+        <span class="item" style="--i: 9"></span>
+        <img class="item" src="images/Pragya Gupta.jpeg" style="--i: 8" alt="" />
+        <span class="item" style="--i: 7"></span>
+        <img class="item" src="https://github.com/Gauravias/bot/blob/main/python.png?raw=true" style="--i: 6" alt="" />
+      </div>
+    </section>
+
+    <section class="card-container">
+      <div class="slider">
+        <div class="card" data-tilt>
+          <div class="content">
+            <img src="images/Sarita Singh.jpg" alt="" />
+            <h1>Sarita Singh</h1>
+            <p>
+              The library processes the given message to binary data and hides all this information in the alpha channel of a given image usign the HTML5 canvas element.
+            </p>
+            <button class="btn btn-grad">
+            <a href="#" > <span>205566 </span></a>
+              <ion-icon name="arrow-forward-outline"></ion-icon>
+            </button>
+          </div>
+        </div>
+
+        <div class="card" data-tilt>
+          <div class="content">
+            <img src="images/1.jpg" alt="" />
+            <h1>Anusha Verma</h1>
+            <p>
+              steganography.js is very simple to use. You only need a HTML5 ready browser which supports the canvas element and all your information will be save inside your images from now on.
+            </p>
+            <button class="btn btn-grad">
+              <a href="#" > <span>205524 </span></a>
+              <ion-icon name="arrow-forward-outline"></ion-icon>
+            </button>
+          </div>
+        </div>
+
+        <div class="card" data-tilt>
+          <div class="content">
+            <img src="images/Pragya Gupta.jpeg" alt="" />
+            <h1>Pragya Gupta</h1>
+            <p>
+              This code will encode the image at the path image.jpg into a base64 string. The base64 string will then be decoded back into an image object, which is saved at the path decoded_image.jpg.
+            </p>
+            <button class="btn btn-grad">
+              <a href="#" > <span>205555 </span></a>
+              <ion-icon name="arrow-forward-outline"></ion-icon>
+            </button>
+          </div>
+        </div>
+
+        <div class="card" data-tilt>
+          <div class="content">
+            <img src="images/Prakriti Gupta.jpg" alt="" />
+            <h1>Prakriti Gupta </h1>
+            <p>
+              You can use this code to encode and decode images into messages for a variety of purposes, such as sending images over email or storing them in a database.
+            </p>
+            <button class="btn btn-grad">
+              <a href="#" > <span>205557 </span></a>
+              <ion-icon name="arrow-forward-outline"></ion-icon>
+            </button>
+          </div>
+        </div>
+        
+
+       
+
+       
+      
+
+      <ul class="control" id="custom-control">
+        <li class="prev">
+          <ion-icon class="arrow" name="caret-back-outline"></ion-icon>
+        </li>
+        <li class="next">
+          <ion-icon class="arrow" name="caret-forward-outline"></ion-icon>
+        </li>
+      </ul>
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="app.js"></script>
+    <script src="vanilla-tilt.js"></script>
+  </body>
+</html>

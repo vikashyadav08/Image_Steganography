@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Steganography</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+   
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<style>
+    .container {
+        display: flex;
+        justify-content: space-between;
+        width: 80%;
+        height: 80%;
+        overflow: hidden;
+        background-color: #ffffff33;
+        backdrop-filter: blur(10px);
+        border-radius: 20px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+        backdrop-filter: blur(4px);
+        -webkit-backdrop-filter: blur(4px);
+        border-radius: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.18);
+    }
+
+    .glassmorphism {
+        background-color: #ffffff33;
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+        backdrop-filter: blur(4px);
+        -webkit-backdrop-filter: blur(4px);
+        border: 1px solid rgba(255, 255, 255, 0.18);
+    }
+
+    .left,
+    .right {
+        flex: 1;
+        padding: 20px;
+    }
+
+
+
+    h2 {
+        margin-top: 0;
+    }
+
+    input[type="file"],
+    input[type="password"],
+    textarea {
+        margin-bottom: 10px;
+        width: calc(100% - 18px);
+        /* Adjusted width for input fields */
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+
+    button {
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: #0056b3;
+    }
+</style>
+
+<body>
+
+    <!-- end about -->
+    <div id="particles-js" class="snow"></div>
+    <nav class="h-[24] w-full glassmorphism">
+        <ul class="flex text-white justify-evenly text-2xl font-bold py-4 items-center">
+            <li><a href="/"><img src="/static/home_icon.png" class="h-10 w-10"></a></li>
+            <li><a href="/text">Text</a></li>
+            <li><a href="/image">Image</a></li>
+            <li><a href="/audio">Audio</a></li>
+            <li><a href="/video">Video</a></li>
+            <li><a href="/files">Files</a></li>
+        </ul>
+    </nav>
+    <div class="sign">
+        <span class="fast-flicker">Text</span>&nbsp;&nbsp;in<span class="flicker"> &nbsp;&nbsp;Image</span>
+    </div>
+
+    <div class="container mt-24">
+
+        <div class="left">
+            <h2 class="text-2xl font-bold text-white mb-2">Encoding</h2>
+            <form action="/encode" method="post" enctype="multipart/form-data" id="encode_form">
+                <input type="file" id="imageFileEncode" accept="image/*" name="imageFileEncode" required
+                    class="text-white">
+                <textarea id="textToHide" placeholder="Text to hide" name="textToHide"></textarea>
+                <p id="enc_password_type" class="text-white px-3 text-left"></p>
+                <input type="password" id="encodePassword" placeholder="Password" name="encodePassword" required>
+                
+                <input type="file" id="fileToHide" name="fileToHide" class="hidden">
+                <button type="submit" class="button-85 w-fit mx-auto">Encode</button>
+
+            </form>
+
+        </div>
+        <div class="right">
+
+            <h2 class="text-2xl font-bold text-white mb-2">Decoding</h2>
+            <form action="/decode" method="post" enctype="multipart/form-data">
+                <input type="file" id="imageFileDecode" name="imageFileDecode" accept="image/*" required
+                    class="text-white">
+                <p id="dec_password_type" class="text-white px-3 text-left"></p>
+                <input type="password" id="decodePassword" placeholder="Password" name="encodePassword" required>
+                
+                <button type="submit" class="button-85">Decode</button>
+                {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                <ul>
+                    {% for message in messages %}
+                    <li>{{ message }}</li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+                {% endwith %}
+                {% if textIsHidden %}
+                <textarea disabled class="mt-5">{{hiddenText}}</textarea>
+
+                {% else %}
+                {% endif %}
+            </form>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.js"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+    <script src="{{ url_for('static', filename='scriptt.js') }}"></script>
+    <script  src="{{ url_for('static', filename='password.js') }}"></script>
+</body>
+
+</html>

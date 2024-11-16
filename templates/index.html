@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Steganography</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<style>
+    .container {
+            display: flex;
+            justify-content: space-between;
+            width: 80%;
+            height: 80%;
+            overflow: hidden;
+            background-color: #ffffff33; 
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+        }
+      .glassmorphism{
+        background-color: #ffffff33; 
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+      }
+        .left,
+        .right {
+            flex: 1;
+            padding: 20px;
+        }
+
+       
+
+        h2 {
+            margin-top: 0;
+        }
+
+        input[type="file"],
+        input[type="password"],
+        textarea {
+            margin-bottom: 10px;
+            width: calc(100% - 18px);
+            /* Adjusted width for input fields */
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+</style>
+<body>
+   
+ <!-- end about -->
+    <div id="particles-js" class="snow"></div>
+    <nav class="h-[24] w-full glassmorphism">
+        <ul class="flex text-white justify-evenly text-2xl font-bold py-4 items-center">
+            <li><a href="/"><img src="/static/home_icon.png" class="h-10 w-10"></a></li>
+            <li><a href="/text">Text</a></li>
+            <li><a href="/image">Image</a></li>
+            <li><a href="/audio">Audio</a></li>
+            <li><a href="/video">Video</a></li>
+            <li><a href="/files">Files</a></li>
+         </ul>
+   </nav>
+    <div class="sign">
+        <span class="fast-flicker">About</span>&nbsp;&nbsp;Our<span class="flicker"> &nbsp;&nbsp;Project</span>
+      </div>
+     
+    <div class="container mt-24 text-center">
+        <h1 class="text-5xl text-center font-bold text-white">Image steganography is the practice of hiding secret data within an image file without noticeably altering the image. This technique allows for secure communication, where the embedded information is concealed in the image's pixel values. The main goal of our project is to develop a robust image steganography system that ensures confidentiality and maintains the quality of the carrier image. By leveraging advanced algorithms, we aim to achieve high embedding capacity and resistance to detection. The project can be used in various applications, including secure data transmission, digital watermarking, and protecting sensitive information.</h1>
+
+    </div>    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.js"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+    <script src="{{ url_for('static', filename='scriptt.js') }}"></script>
+</body>
+</html>
